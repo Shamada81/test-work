@@ -1,0 +1,30 @@
+.textForAnimate {
+	position: relative;
+	font-size: 90px;
+	font-weight: 500;
+	color: $color-text;
+	text-transform: uppercase;
+	&:before {
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		line-height: 64px;
+		transform: rotate3d(1, 0, 0, 90deg);
+		transform-origin: bottom;
+		background: linear-gradient(0deg, $color-text 0, transparent 90%);
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		color: transparent;
+		opacity: 1;	
+		transition: all .7s ease;
+	}
+	&:hover {
+		&:before {
+			transform: rotate3d(1, 0, 0, 180deg);
+		}
+	}
+	&:active {
+		opacity: 0;
+	}
+}
